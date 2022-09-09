@@ -1,20 +1,23 @@
 package com.example.desafioandroid02.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.desafioandroid02.Filme
+import com.example.desafioandroid02.model.Filme
 import com.example.desafioandroid02.databinding.ItemFilmeBinding
 
-class ListaFilmesAdapter: RecyclerView.Adapter<ListaFilmesAdapter.ViewHolder>() {
+class ListaFilmesAdapter(
+    private val context: Context,
+): RecyclerView.Adapter<ListaFilmesAdapter.ViewHolder>() {
 
     private val listaFilmes: ArrayList<Filme> = arrayListOf()
 
     class ViewHolder(
         private val binding: ItemFilmeBinding
     ): RecyclerView.ViewHolder(binding.root){
-        fun bind(filme:Filme){
+        fun bind(filme: Filme){
             val img = ("https://image.tmdb.org/t/p/w500 ${filme.bannerImagem}")
             Glide.with(binding.root).load(img).into(binding.itemFilmeImagem)
             binding.itemFilmeNome.text = filme.titulo

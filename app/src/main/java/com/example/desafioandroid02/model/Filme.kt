@@ -1,4 +1,4 @@
-package com.example.desafioandroid02
+package com.example.desafioandroid02.model
 
 import com.google.gson.annotations.SerializedName
 
