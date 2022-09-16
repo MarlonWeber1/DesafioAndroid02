@@ -1,5 +1,6 @@
 package com.example.desafioandroid02.webclient
 
+import com.example.desafioandroid02.webclient.services.FilmeService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -9,6 +10,8 @@ class RetrofitInicializador {
         .baseUrl("https://api.themoviedb.org/3/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    val api = retrofit.create(FilmeService::class.java)
 
 
 
