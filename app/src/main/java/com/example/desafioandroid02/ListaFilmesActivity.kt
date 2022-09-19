@@ -1,5 +1,6 @@
 package com.example.desafioandroid02
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,8 @@ class ListaFilmesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        setTitle("Lista Filmes")
+
         lifecycleScope.launchWhenCreated {
             lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED){
                 try {
@@ -39,6 +42,10 @@ class ListaFilmesActivity : AppCompatActivity() {
                 adapter.setOnItemClickListener(object: ListaFilmesAdapter.onItemClickListener{
                     override fun onItemClick(position: Int) {
                         Toast.makeText(this@ListaFilmesActivity, "Item Clicado $position", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this@ListaFilmesActivity, TelaInfoFilmeActivity::class.java)
+                        startActivity(intent)
+
                     }
                 })
             }
