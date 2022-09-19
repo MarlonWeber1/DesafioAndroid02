@@ -36,6 +36,11 @@ class ListaFilmesActivity : AppCompatActivity() {
                     Toast.makeText(this@ListaFilmesActivity, "Error Sem Internet", Toast.LENGTH_SHORT).show()
                 }
                 binding.activityListaNotasRecyclerview.adapter = adapter
+                adapter.setOnItemClickListener(object: ListaFilmesAdapter.onItemClickListener{
+                    override fun onItemClick(position: Int) {
+                        Toast.makeText(this@ListaFilmesActivity, "Item Clicado $position", Toast.LENGTH_SHORT).show()
+                    }
+                })
             }
         }
 
