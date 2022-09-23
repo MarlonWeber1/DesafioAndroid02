@@ -10,7 +10,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.desafioandroid02.adapter.ListaFilmesAdapter
 import com.example.desafioandroid02.databinding.ActivityListaFilmesBinding
 import com.example.desafioandroid02.webclient.RetrofitInicializador
-import java.lang.Exception
+import java.io.Serializable
 
 class ListaFilmesActivity : AppCompatActivity() {
 
@@ -39,15 +39,11 @@ class ListaFilmesActivity : AppCompatActivity() {
                     Toast.makeText(this@ListaFilmesActivity, "Error Sem Internet", Toast.LENGTH_SHORT).show()
                 }
                 binding.activityListaNotasRecyclerview.adapter = adapter
-                adapter.setOnItemClickListener(object: ListaFilmesAdapter.onItemClickListener{
-                    override fun onItemClick(position: Int) {
-                        Toast.makeText(this@ListaFilmesActivity, "Item Clicado $position", Toast.LENGTH_SHORT).show()
-
-                        val intent = Intent(this@ListaFilmesActivity, TelaInfoFilmeActivity::class.java)
-                        startActivity(intent)
-
-                    }
-                })
+                adapter.itemClickListener = {
+                    val intent = Intent(this@ListaFilmesActivity, TelaInfoFilmeActivity::class.java)
+                    intent.putExtra("filme", it as Serializable)
+                    startActivity(intent)
+                }
             }
         }
 
