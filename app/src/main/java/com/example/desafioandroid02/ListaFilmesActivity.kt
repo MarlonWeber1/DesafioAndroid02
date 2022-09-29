@@ -29,7 +29,7 @@ class ListaFilmesActivity : AppCompatActivity() {
         setTitle("Lista Filmes")
 
         lifecycleScope.launchWhenCreated {
-            lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED){
+            lifecycle.repeatOnLifecycle(Lifecycle.State.CREATED){
                 try {
                     val response = RetrofitInicializador().api.bucasFilmesPopulares()
                     if(response.isSuccessful){
@@ -46,8 +46,5 @@ class ListaFilmesActivity : AppCompatActivity() {
                 }
             }
         }
-
-
-
     }
 }

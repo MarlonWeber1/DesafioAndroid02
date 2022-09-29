@@ -8,24 +8,26 @@
 
     <ImageView
         android:id="@+id/bannerFilme"
-        android:layout_width="411dp"
-        android:layout_height="238dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/nomeFilme"
         android:layout_width="193dp"
         android:layout_height="31dp"
-        android:layout_marginEnd="188dp"
+        android:layout_marginEnd="196dp"
         android:text="Nome Filme"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/bindingNomeFilme"
@@ -42,19 +44,19 @@
         android:id="@+id/dataDeLançamento"
         android:layout_width="240dp"
         android:layout_height="33dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginEnd="152dp"
         android:text="Data de lançamento"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="0.585" />
 
     <TextView
         android:id="@+id/bindingDataLancamento"
         android:layout_width="90dp"
         android:layout_height="22dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="276dp"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,19 +74,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bannerFilme"
-        app:layout_constraintVertical_bias="0.394" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <TextView
         android:id="@+id/bindingDescricao"
-        android:layout_width="329dp"
-        android:layout_height="216dp"
+        android:layout_width="334dp"
+        android:layout_height="163dp"
         android:layout_marginTop="20dp"
         android:text="teste"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.389"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descricao"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.737" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
