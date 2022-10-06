@@ -46,5 +46,20 @@ class ListaFilmesActivity : AppCompatActivity() {
                 }
             }
         }
+
+        binding.bottomNav.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.menuFilmes->{
+                    val intent = Intent(this@ListaFilmesActivity, ListaFilmesActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.menuFavoritos->{
+                    val intent = Intent(this@ListaFilmesActivity, FilmesFavoritos::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+
     }
 }
