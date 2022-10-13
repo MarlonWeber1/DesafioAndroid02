@@ -16,6 +16,8 @@ class TelaInfoFilmeActivity : AppCompatActivity() {
         var filme = intent.getSerializableExtra("filme") as Filme
         val imagem = findViewById<ImageView>(R.id.bannerFilme)
         Glide.with(imagem).load("https://image.tmdb.org/t/p/w500${filme.bannerImagem}").into(imagem)
+        val foto = findViewById<ImageView>(R.id.fotoFilme)
+        Glide.with(foto).load("https://image.tmdb.org/t/p/w500${filme.posterImagem}").into(foto)
         val titulo = findViewById<TextView>(R.id.bindingNomeFilme)
         titulo.text = filme.titulo
         val dataLancamento = findViewById<TextView>(R.id.bindingDataLancamento)
