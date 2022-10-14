@@ -30,7 +30,7 @@ class FilmesFavoritos : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_filmes_favoritos)
 
-        dao = FilmesDatabase.FilmesDatabase.getInstance(this).getFilmeFavoritoDAO()
+        dao = FilmesDatabase.getInstance(this).getFilmeFavoritoDAO()
 
         recycler = binding.activityListaNotasRecyclerview
         recycler.adapter = teste

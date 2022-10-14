@@ -15,8 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:spanCount="2"
-        tools:itemCount="10"
+        app:spanCount="3"
+        tools:itemCount="20"
         tools:listitem="@layout/item_filme" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

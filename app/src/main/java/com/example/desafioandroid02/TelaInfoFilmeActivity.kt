@@ -22,7 +22,7 @@ class TelaInfoFilmeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tela_info_filme)
         setTitle("Info Filmes")
 
-        dao = FilmesDatabase.FilmesDatabase.getInstance(this).getFilmeFavoritoDAO()
+        dao = FilmesDatabase.getInstance(this).getFilmeFavoritoDAO()
 
         var filme = intent.getSerializableExtra("filme") as Filme
         val imagem = findViewById<ImageView>(R.id.bannerFilme)
