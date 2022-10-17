@@ -48,4 +48,5 @@ class ListaFilmesAdapter(): RecyclerView.Adapter<ListaFilmesAdapter.ViewHolder>(
         notifyItemRangeInserted(oldRangeItem, newRangeItem)
     }
 
+
 }

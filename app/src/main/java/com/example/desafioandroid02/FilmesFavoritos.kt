@@ -10,14 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.desafioandroid02.adapter.ListaFilmesAdapter
 import com.example.desafioandroid02.dao.FilmeFavoritoDAO
 import com.example.desafioandroid02.database.FilmesDatabase
+import com.example.desafioandroid02.databinding.ActivityFilmesFavoritosBinding
 import com.example.desafioandroid02.databinding.ActivityListaFilmesBinding
 import com.example.desafioandroid02.model.Filme
 
 class FilmesFavoritos : AppCompatActivity() {
 
-    private val binding by lazy {
-        ActivityListaFilmesBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: ActivityFilmesFavoritosBinding
     private lateinit var dao: FilmeFavoritoDAO
     private var arrayList: ArrayList<Filme> = ArrayList()
     private lateinit var recycler: RecyclerView
@@ -25,17 +24,17 @@ class FilmesFavoritos : AppCompatActivity() {
         ListaFilmesAdapter();
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_filmes_favoritos)
+        binding = ActivityFilmesFavoritosBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         dao = FilmesDatabase.getInstance(this).getFilmeFavoritoDAO()
 
-        recycler = binding.activityListaNotasRecyclerview
+        recycler = binding.activityListaFavoritosRecyclerview
         recycler.adapter = teste
-        arrayList = dao.busca() as ArrayList<Filme>
-        teste.mandaProAdapter(dao.busca())
+        arrayList = dao.busca() as? ArrayList<Filme> ?: arrayListOf()
+        teste.mandaProAdapter(arrayList)
 
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId){
@@ -49,6 +48,15 @@ class FilmesFavoritos : AppCompatActivity() {
                 }
             }
             true
+        }
+
+        fun teste(){
+            binding.root.setOnLongClickListener {
+                false
+            }
+            binding.root.setOnClickListener {
+
+            }
         }
     }
 
